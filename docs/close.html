@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Close - UIkit tests</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="close" class="uk-h1 tm-heading-fragment"><a href="#close">Close</a></h1>
+                <p class="uk-text-lead">Create a close icon that can be combined with different components.</p>
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To apply this component, add the <code>uk-close</code> attribute to an <code>&lt;a&gt;</code> or <code>&lt;button&gt;</code> element.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <button type="button" uk-close="" class="uk-icon uk-close">
+                                <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+                                    <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+                                    <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+                                </svg>
+                            </button>
+                        </li>
+                        <li><pre><code id="code-khqm1hs7" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqm1hs7" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqm1hs7" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="large-modifier" class="uk-h3 tm-heading-fragment"><a href="#large-modifier">Large modifier</a></h2>
+                <p>Add the <code>.uk-close-large</code> class for a larger close button.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-close-large"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <button class="uk-close-large uk-icon uk-close" type="button" uk-close="">
+                                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="close-large">
+                                    <line fill="none" stroke="#000" stroke-width="1.4" x1="1" y1="1" x2="19" y2="19"></line>
+                                    <line fill="none" stroke="#000" stroke-width="1.4" x1="19" y1="1" x2="1" y2="19"></line>
+                                </svg>
+                            </button>
+                        </li>
+                        <li><pre><code id="code-khqm1hs8" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-close-large"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqm1hs8" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqm1hs8" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="close-in-alerts" class="uk-h3 tm-heading-fragment"><a href="#close-in-alerts">Close in alerts</a></h2>
+                <p>This is an example of how this component is used with an alert box from the <a href="alert">Alert component</a>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-alert</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-alert-close"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-alert="" class="uk-alert">
+                                <button class="uk-alert-close uk-icon uk-close" type="button" uk-close="">
+                                    <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+                                        <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+                                        <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+                                    </svg>
+                                </button>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqm1hs9" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-alert</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-alert-close"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqm1hs9" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqm1hs9" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="close-in-drops" class="uk-h3 tm-heading-fragment"><a href="#close-in-drops">Close in drops</a></h2>
+                <p>This is an example of how this component is used with the <a href="drop">Drop component</a>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-drop</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-drop-close"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-inline">
+                                <button class="uk-button uk-button-default" type="button" aria-expanded="false">Click</button>
+                                <div uk-drop="mode: click" class="uk-drop">
+                                    <div class="uk-card uk-card-body uk-card-default">
+                                        <button class="uk-drop-close uk-icon uk-close" type="button" uk-close="">
+                                            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+                                                <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+                                                <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+                                            </svg>
+                                        </button>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqm1hsa" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Click<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-drop</span>=<span class="hljs-string">"mode: click"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-body uk-card-default"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-drop-close"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqm1hsa" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqm1hsa" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="close-in-modals" class="uk-h3 tm-heading-fragment"><a href="#close-in-modals">Close in modals</a></h2>
+                <p>This is an example of how this component is used with the <a href="modal">Modal component</a>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal"</span> <span class="hljs-attr">uk-modal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-modal-dialog uk-modal-body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-modal-close-default"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active"><a class="uk-button uk-button-default" href="#modal" uk-toggle="">Open modal</a>
+                            <div id="modal" uk-modal="" class="uk-modal">
+                                <div class="uk-modal-dialog uk-modal-body">
+                                    <button class="uk-modal-close-default uk-icon uk-close" type="button" uk-close="">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" data-svg="close-icon">
+                                            <line fill="none" stroke="#000" stroke-width="1.1" x1="1" y1="1" x2="13" y2="13"></line>
+                                            <line fill="none" stroke="#000" stroke-width="1.1" x1="13" y1="1" x2="1" y2="13"></line>
+                                        </svg>
+                                    </button>
+                                    <h2 class="uk-modal-title">Headline</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                    <p class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                        <button class="uk-button uk-button-primary" type="button">Save</button>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqm1hsb" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#modal"</span> <span class="hljs-attr">uk-toggle</span>&gt;</span>Open modal<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"modal"</span> <span class="hljs-attr">uk-modal</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-modal-dialog uk-modal-body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-modal-close-default"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span> <span class="hljs-attr">uk-close</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-modal-title"</span>&gt;</span>Headline<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-right"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default uk-modal-close"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-primary"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"button"</span>&gt;</span>Save<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqm1hsb" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqm1hsb" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

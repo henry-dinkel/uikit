@@ -1,0 +1,147 @@
+//
+// Component: Base
+//
+// ========================================================================
+// Variables
+// ========================================================================
+//
+// New
+//
+@base-code-padding-horizontal: 6px;
+@base-code-padding-vertical: 2px;
+@base-code-background: @global-muted-background;
+@base-blockquote-color: @global-emphasis-color;
+@base-blockquote-footer-color: @global-color;
+@base-pre-padding: 30px;
+@base-pre-background: @global-background;
+@base-pre-border-width: @global-border-width;
+@base-pre-border: @global-border;
+@base-pre-border-radius: 3px;
+// Body
+// ========================================================================
+.hook-base-body() {}
+
+// Links
+// ========================================================================
+.hook-base-link() {}
+
+.hook-base-link-hover() {}
+
+// Text-level semantics
+// ========================================================================
+.hook-base-code() {
+    padding: @base-code-padding-vertical @base-code-padding-horizontal;
+    background: @base-code-background;
+}
+
+// Headings
+// ========================================================================
+.hook-base-heading() {}
+
+.hook-base-h1() {}
+
+.hook-base-h2() {}
+
+.hook-base-h3() {}
+
+.hook-base-h4() {}
+
+.hook-base-h5() {}
+
+.hook-base-h6() {}
+
+// Horizontal rules
+// ========================================================================
+.hook-base-hr() {}
+
+// Blockquotes
+// ========================================================================
+.hook-base-blockquote() {
+    color: @base-blockquote-color;
+}
+
+.hook-base-blockquote-footer() {
+    color: @base-blockquote-footer-color;
+    &::before {
+        content: "— ";
+    }
+}
+
+// Preformatted text
+// ========================================================================
+.hook-base-pre() {
+    padding: @base-pre-padding;
+    background: #f8f8f8;
+    font-size: @global-small-font-size;
+    font-weight: lighter;
+    //border: @base-pre-border-width solid @base-pre-border;
+    //border-radius: @base-pre-border-radius;
+    //background: @base-pre-background;
+}
+
+.hljs-tag {
+    color: #333;
+}
+
+.hljs-section,
+.hljs-name {
+    color: #63a35c;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #795da3;
+}
+
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+    color: #f0506e;
+}
+
+// Miscellaneous
+// ========================================================================
+.hook-base-misc() {}
+
+// Inverse
+// ========================================================================
+@inverse-base-blockquote-color: @inverse-global-emphasis-color;
+@inverse-base-blockquote-footer-color: @inverse-global-color;
+.hook-inverse-base-link() {}
+
+.hook-inverse-base-link-hover() {}
+
+.hook-inverse-base-code() {
+    background: @inverse-global-muted-background;
+}
+
+.hook-inverse-base-heading() {}
+
+.hook-inverse-base-h1() {}
+
+.hook-inverse-base-h2() {}
+
+.hook-inverse-base-h3() {}
+
+.hook-inverse-base-h4() {}
+
+.hook-inverse-base-h5() {}
+
+.hook-inverse-base-h6() {}
+
+.hook-inverse-base-blockquote() {
+    color: @inverse-base-blockquote-color;
+}
+
+.hook-inverse-base-blockquote-footer() {
+    color: @inverse-base-blockquote-footer-color;
+}
+
+.hook-inverse-base-hr() {}

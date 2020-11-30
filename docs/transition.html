@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Transition - UIkit</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="transition" class="uk-h1 tm-heading-fragment"><a href="#transition">Transition</a></h1>
+                <p class="uk-text-lead">Create smooth transitions between two states when hovering an element.</p>
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To toggle a transition on hover or focus, add the <code>.uk-transition-toggle</code> class to a parent element. Also add <code>tabindex="0"</code> to make the animation focusable through keyboard navigation and on touch devices. Add one of the <code>.uk-transition-*</code> classes to any child element to apply the actual effect.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Class</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>.uk-transition-fade</code></td>
+                                <td align="left">Lets the element fade in</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-transition-scale-up</code>
+                                    <br> <code>.uk-transition-scale-down</code></td>
+                                <td align="left">The element scales up or down.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-transition-slide-top</code>
+                                    <br> <code>.uk-transition-slide-bottom</code>
+                                    <br> <code>.uk-transition-slide-left</code>
+                                    <br> <code>.uk-transition-slide-right</code></td>
+                                <td align="left">Lets the element slide in from the top</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-transition-slide-top-small</code>
+                                    <br> <code>.uk-transition-slide-bottom-small</code>
+                                    <br> <code>.uk-transition-slide-left-small</code>
+                                    <br> <code>.uk-transition-slide-right-small</code></td>
+                                <td align="left">The element slides in from the top, bottom, left or right with a smaller distance.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-transition-slide-top-medium</code>
+                                    <br> <code>.uk-transition-slide-bottom-medium</code>
+                                    <br> <code>.uk-transition-slide-left-medium</code>
+                                    <br> <code>.uk-transition-slide-right-medium</code></td>
+                                <td align="left">The element slides in from the top, bottom, left or right with a medium distance.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>This component is mostly used in combination with the <a href="overlay">Overlay component</a> as elements are transitioned from invisible to visible state. To place the overlay on top of another element, like an image, use the <a href="position">Position component</a>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-fade"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2 uk-child-width-1-3@s uk-grid-match uk-grid-small uk-grid" uk-grid="">
+                                <div class="uk-text-center uk-first-column">
+                                    <div class="uk-inline-clip uk-transition-toggle" tabindex="0"> <img src="images/dark.jpg" alt="">
+                                        <div class="uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle">
+                                            <p class="uk-h4 uk-margin-remove">Fade</p>
+                                        </div>
+                                    </div>
+                                    <p class="uk-margin-small-top">Fade</p>
+                                </div>
+                                <div class="uk-text-center">
+                                    <div class="uk-inline-clip uk-transition-toggle" tabindex="0"> <img src="images/dark.jpg" alt="">
+                                        <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                                            <p class="uk-h4 uk-margin-remove">Bottom</p>
+                                        </div>
+                                    </div>
+                                    <p class="uk-margin-small-top">Bottom</p>
+                                </div>
+                                <div class="uk-text-center">
+                                    <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0"> <img src="images/dark.jpg" alt="">
+                                        <div class="uk-position-center"> <span class="uk-transition-fade uk-icon" uk-icon="icon: plus; ratio: 2"><svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" data-svg="plus"><rect x="9" y="1" width="1" height="17"></rect><rect x="1" y="9" width="17" height="1"></rect></svg></span> </div>
+                                    </div>
+                                    <p class="uk-margin-small-top">Icon</p>
+                                </div>
+                                <div class="uk-text-center uk-grid-margin uk-first-column">
+                                    <div class="uk-inline-clip uk-transition-toggle" tabindex="0"> <img src="images/dark.jpg" alt=""> <img class="uk-transition-scale-up uk-position-cover" src="images/light.jpg" alt=""> </div>
+                                    <p class="uk-margin-small-top">2 Images</p>
+                                </div>
+                                <div class="uk-text-center uk-grid-margin">
+                                    <div class="uk-inline-clip uk-transition-toggle" tabindex="0"> <img class="uk-transition-scale-up uk-transition-opaque" src="images/dark.jpg" alt=""> </div>
+                                    <p class="uk-margin-small-top">Scale Up Image</p>
+                                </div>
+                                <div class="uk-text-center uk-grid-margin">
+                                    <div class="uk-inline-clip uk-transition-toggle uk-light" tabindex="0"> <img src="images/dark.jpg" alt="">
+                                        <div class="uk-position-center">
+                                            <div class="uk-transition-slide-top-small">
+                                                <h4 class="uk-margin-remove">Headline</h4></div>
+                                            <div class="uk-transition-slide-bottom-small">
+                                                <h4 class="uk-margin-remove">Subheadline</h4></div>
+                                        </div>
+                                    </div>
+                                    <p class="uk-margin-small-top">Small Top + Bottom</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khxp6zuy" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2 uk-child-width-1-3@s uk-grid-match uk-grid-small"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-fade uk-position-cover uk-position-small uk-overlay uk-overlay-default uk-flex uk-flex-center uk-flex-middle"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-h4 uk-margin-remove"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-h4 uk-margin-remove"</span>&gt;</span>Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle uk-light"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-fade"</span> <span class="hljs-attr">uk-icon</span>=<span class="hljs-string">"icon: plus; ratio: 2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>Icon<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-scale-up uk-position-cover"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>2 Images<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-scale-up uk-transition-opaque"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>Scale Up Image<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline-clip uk-transition-toggle uk-light"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-slide-top-small"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-remove"</span>&gt;</span>Headline<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-transition-slide-bottom-small"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">h4</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-remove"</span>&gt;</span>Subheadline<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-margin-small-top"</span>&gt;</span>Small Top + Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khxp6zuy" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khxp6zuy" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

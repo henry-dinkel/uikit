@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tooltip - UIkit</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="tooltip" class="uk-h1 tm-heading-fragment"><a href="#tooltip">Tooltip</a></h1>
+                <p class="uk-text-lead">Easily create a nice looking tooltip.</p>
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To apply this component, add the <code>uk-tooltip</code> attribute to an element. You also need to add the <code>title: TEXT</code> option to the attribute, whose value will represent your tooltip's text.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <p>If <code>title</code> is the only option in the attribute value, you can also use <code>uk-tooltip="TEXT"</code></p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"Hello World"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <button class="uk-button uk-button-default" uk-tooltip="Hello World" title="" aria-expanded="false">Hover</button>
+                        </li>
+                        <li><pre><code id="code-khxp4nhl" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"Hello World"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khxp4nhl" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khxp4nhl" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="alignment" class="uk-h3 tm-heading-fragment"><a href="#alignment">Alignment</a></h2>
+                <p>Add one of the following options to the <code>uk-tooltip</code> attribute to adjust the tooltip's alignment.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: top-left"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre> </div>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Attribute</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>pos: top</code></td>
+                                <td align="left">Aligns the tooltip to the top.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: top-left</code></td>
+                                <td align="left">Aligns the tooltip to the top left.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: top-right</code></td>
+                                <td align="left">Aligns the tooltip to the top right.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: bottom</code></td>
+                                <td align="left">Aligns the tooltip to the bottom.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: bottom-left</code></td>
+                                <td align="left">Aligns the tooltip to the bottom left.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: bottom-right</code></td>
+                                <td align="left">Aligns the tooltip to the bottom right.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: left</code></td>
+                                <td align="left">Aligns the tooltip to the left.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos: right</code></td>
+                                <td align="left">Aligns the tooltip to the right.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <p uk-margin="">
+                                <button class="uk-button uk-button-default uk-first-column" uk-tooltip="Hello World" title="" aria-expanded="false">Top</button>
+                                <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: top-left" title="" aria-expanded="false">Top Left</button>
+                                <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: top-right" title="" aria-expanded="false">Top Right</button>
+                                <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom" title="" aria-expanded="false">Bottom</button>
+                                <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; pos: bottom-left" title="" aria-expanded="false">Bottom Left</button>
+                                <button class="uk-button uk-button-default uk-margin-small-top uk-first-column" uk-tooltip="title: Hello World; pos: bottom-right" title="" aria-expanded="false">Bottom Right</button>
+                                <button class="uk-button uk-button-default uk-margin-small-top" uk-tooltip="title: Hello World; pos: left" title="" aria-expanded="false">Left</button>
+                                <button class="uk-button uk-button-default uk-margin-small-top" uk-tooltip="title: Hello World; pos: right" title="" aria-expanded="false">Right</button>
+                            </p>
+                        </li>
+                        <li><pre><code id="code-khxp4nhm" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">uk-margin</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"Hello World"</span>&gt;</span>Top<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: top-left"</span>&gt;</span>Top Left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: top-right"</span>&gt;</span>Top Right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: bottom"</span>&gt;</span>Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: bottom-left"</span>&gt;</span>Bottom Left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: bottom-right"</span>&gt;</span>Bottom Right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: left"</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; pos: right"</span>&gt;</span>Right<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khxp4nhm" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khxp4nhm" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="delay" class="uk-h3 tm-heading-fragment"><a href="#delay">Delay</a></h2>
+                <p>If you want the tooltip to appear with a little delay, just add the <code>delay</code> option to the <code>uk-tooltip</code> attribute with your value in milliseconds.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; delay: 500"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <button class="uk-button uk-button-default" uk-tooltip="title: Hello World; delay: 500" title="" aria-expanded="false">Hover</button>
+                        </li>
+                        <li><pre><code id="code-khxp4nhn" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"title: Hello World; delay: 500"</span>&gt;</span>Hover<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khxp4nhn" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khxp4nhn" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="component-options" class="uk-h3 tm-heading-fragment"><a href="#component-options">Component options</a></h2>
+                <p>Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>title</code></td>
+                                <td align="left">String</td>
+                                <td align="left">``</td>
+                                <td align="left">Tooltip text.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pos</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>top</code></td>
+                                <td align="left">Tooltip position.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>offset</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Tooltip offset.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>animation</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>uk-animation-scale-up</code></td>
+                                <td align="left">The space separated names of animations to use. Comma separate for animation out.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>duration</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>100</code></td>
+                                <td align="left">The animation duration.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>delay</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>0</code></td>
+                                <td align="left">The show delay.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>cls</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>uk-active</code></td>
+                                <td align="left">The active class.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>container</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>body</code></td>
+                                <td align="left">Define a target container via a selector to specify where the tooltip should be appended in the DOM.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><code>title</code> is the <em>Primary</em> option and its key may be omitted, if it's the only option in the attribute value.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">uk-tooltip</span>=<span class="hljs-string">"Hello World"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre> </div>
+                <hr class="uk-margin-large">
+                <h2 id="javascript" class="uk-h3 tm-heading-fragment"><a href="#javascript">JavaScript</a></h2>
+                <p>Learn more about <a href="javascript#programmatic-use">JavaScript components</a>.</p>
+                <h3 id="initialization" class="uk-h4 tm-heading-fragment"><a href="#initialization">Initialization</a></h3>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.tooltip(element, options);</code></pre> </div>
+                <h3 id="events" class="uk-h4 tm-heading-fragment"><a href="#events">Events</a></h3>
+                <p>The following events will be triggered on elements, which are injected by this component:</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Name</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>beforeshow</code></td>
+                                <td align="left">Fires before an item is shown. Can prevent showing by calling <code>preventDefault()</code> on the event.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>show</code></td>
+                                <td align="left">Fires after an item is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>shown</code></td>
+                                <td align="left">Fires after the item's show animation has completed.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>beforehide</code></td>
+                                <td align="left">Fires before an item is hidden. Can prevent hiding by calling <code>preventDefault()</code> on the event.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>hide</code></td>
+                                <td align="left">Fires after an item's hide animation has started.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>hidden</code></td>
+                                <td align="left">Fires after an item is hidden.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4 id="example" class="uk-h5 tm-heading-fragment"><a href="#example">Example</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-javascript hljs">UIkit.util.on(<span class="hljs-built_in">document</span>, <span class="hljs-string">'show'</span>, <span class="hljs-string">'.uk-tooltip.uk-active'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// do something</span>
+});</code></pre> </div>
+                <h3 id="methods" class="uk-h4 tm-heading-fragment"><a href="#methods">Methods</a></h3>
+                <p>The following methods are available for the component:</p>
+                <h4 id="show" class="uk-h5 tm-heading-fragment"><a href="#show">Show</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.tooltip(element).show();</code></pre> </div>
+                <p>Shows the Tooltip.</p>
+                <h4 id="hide" class="uk-h5 tm-heading-fragment"><a href="#hide">Hide</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.tooltip(element).hide();</code></pre> </div>
+                <p>Hides the Tooltip.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

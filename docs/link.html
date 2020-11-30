@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link - UIkit</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="link" class="uk-h1 tm-heading-fragment"><a href="#link">Link</a></h1>
+                <p class="uk-text-lead">Define different styles to integrate links into specific content.</p>
+                <h2 id="muted-modifier" class="uk-h3 tm-heading-fragment"><a href="#muted-modifier">Muted modifier</a></h2>
+                <p>The <a href="base">Base component</a> determines the default link color. If you want the link to a apply a muted style instead, just add the <code>.uk-link-muted</code> class to the anchor element. You can also add the class to a parent element and it will be applied to all <code>&lt;a&gt;</code> elements inside it.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-muted"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active"><a class="uk-link-muted" href="#">Link</a>
+                            <p class="uk-link-muted">Lorem ipsum <a href="#">dolor sit</a> amet, consectetur adipiscing elit, sed do <a href="#">eiusmod</a> tempor incididunt ut <a href="#">labore et</a> dolore magna aliqua.</p>
+                        </li>
+                        <li><pre><code id="code-khwap7yz" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-muted"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-muted"</span>&gt;</span>Lorem ipsum <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>dolor sit<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> amet, consectetur adipiscing elit, sed do <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>eiusmod<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> tempor incididunt ut <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>labore et<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span> dolore magna aliqua.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwap7yz" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwap7yz" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="text-modifier" class="uk-h3 tm-heading-fragment"><a href="#text-modifier">Text modifier</a></h2>
+                <p>To make a link appear like body text and apply a hover effect, add the <code>.uk-link-text</code> class to the anchor element. You can also add the class to a parent element and it will be applied to all <code>&lt;a&gt;</code> elements inside it. This is useful for link lists in the page footer.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-text"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <ul class="uk-list uk-link-text">
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                            </ul>
+                        </li>
+                        <li><pre><code id="code-khwap7z0" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-list uk-link-text"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwap7z0" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwap7z0" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="heading-modifier" class="uk-h3 tm-heading-fragment"><a href="#heading-modifier">Heading modifier</a></h2>
+                <p>To style a link inside a heading element, add the <code>.uk-link-heading</code> class to the anchor element.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-heading"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <h3><a class="uk-link-heading" href="#">Heading</a></h3></li>
+                        <li><pre><code id="code-khwap7z1" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-heading"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwap7z1" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwap7z1" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="reset-modifier" class="uk-h3 tm-heading-fragment"><a href="#reset-modifier">Reset modifier</a></h2>
+                <p>To reset a link's color, so that it inherits the color from its parent, add the <code>.uk-link-reset</code> class. There won't be any hover effect at all. This is useful for links inside heading elements. You can also add the class to a parent element and it will be applied to all <code>&lt;a&gt;</code> elements inside it.</p>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active"><a class="uk-link-reset" href="#">Link</a>
+                            <h3><a class="uk-link-reset" href="#">Heading</a></h3></li>
+                        <li><pre><code id="code-khwap7z2" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-reset"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Link<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-reset"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwap7z2" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwap7z2" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="toggle" class="uk-h3 tm-heading-fragment"><a href="#toggle">Toggle</a></h2>
+                <p>To use an anchor as parent element and apply the link style on one of its child elements, just add the <code>.uk-link-toggle</code> class to the parent element and one of the <code>.uk-link-*</code> classes to the child element. For instance, you can link the whole card and still have the hover effect on the heading.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-toggle"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-heading"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <a href="" class="uk-display-block uk-card uk-card-body uk-card-default uk-link-toggle uk-width-medium">
+                                <h3 class="uk-card-title"><span class="uk-link-heading">Heading</span></h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </a>
+                        </li>
+                        <li><pre><code id="code-khwap7z3" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-display-block uk-card uk-card-body uk-card-default uk-link-toggle uk-width-medium"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h3</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card-title"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-link-heading"</span>&gt;</span>Heading<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwap7z3" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwap7z3" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Height - UIkit tests</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="height" class="uk-h1 tm-heading-fragment"><a href="#height">Height</a></h1>
+                <p class="uk-text-lead">Define the height of elements depending on the viewport or match the heights of different elements.</p>
+                <p>UIkit's Height component offers three options to set heights: using simple fixed height utility classes, depending on the viewport or by matching the heights of different elements.</p>
+                <hr class="uk-margin-large">
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>UIkit provides a number of useful classes to alter an element's height.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Class</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>.uk-height-1-1</code></td>
+                                <td align="left">This class applies a height of 100%. This only works if the parent element has a set height.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-height-small</code>
+                                    <br> <code>.uk-height-max-small</code></td>
+                                <td align="left">These classes apply a height or max-height of <em>150px</em>.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-height-medium</code>
+                                    <br> <code>.uk-height-max-medium</code></td>
+                                <td align="left">These classes apply a height or max-height of <em>300px</em>.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-height-large</code>
+                                    <br> <code>.uk-height-max-large</code></td>
+                                <td align="left">These classes apply a height or max-height of <em>450px</em>.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-small"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-3@s uk-grid" uk-grid="">
+                                <div class="uk-first-column">
+                                    <div class="uk-height-small uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">Small</div>
+                                </div>
+                                <div>
+                                    <div class="uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">Medium</div>
+                                </div>
+                                <div>
+                                    <div class="uk-height-large uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle">Large</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khw9nsdo" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-3@s"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-small uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle"</span>&gt;</span>Small<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-medium uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle"</span>&gt;</span>Medium<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-large uk-card uk-card-default uk-card-body uk-flex uk-flex-center uk-flex-middle"</span>&gt;</span>Large<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9nsdo" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9nsdo" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="viewport-height" class="uk-h3 tm-heading-fragment"><a href="#viewport-height">Viewport height</a></h2>
+                <p>Add the <code>uk-height-viewport</code> attribute to create a container that fills the height of the entire viewport. You can change the height behavior by adding the <code>offset-top</code>, <code>offset-bottom</code> or <code>expand</code> option to the attribute. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>offset-top</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Subtracts the element's top offset from its height.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>offset-bottom</code></td>
+                                <td align="left">Boolean, Number, Pixel</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Subtracts the height (true) of the sibling that immediately follows the element, the given percentage (Number), Pixel (px) value from element's own height or the given element's height.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>expand</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Expands the element's height to make a short page fill the viewport.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>min-height</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>0</code></td>
+                                <td align="left">Sets a minimum height. Useful if all children are positioned absolute.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-viewport</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-viewport</span>=<span class="hljs-string">"offset-top: true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-viewport</span>=<span class="hljs-string">"offset-bottom: 20"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-viewport</span>=<span class="hljs-string">"expand: true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-viewport</span>=<span class="hljs-string">"min-height: 300"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <p>You can view examples in the tests for <a href="../assets/uikit/tests/height-viewport.html">Height Viewport</a> and <a href="../assets/uikit/tests/height-expand.html">Height Expand</a>.</p>
+                <hr class="uk-margin-large">
+                <h2 id="match-height" class="uk-h3 tm-heading-fragment"><a href="#match-height">Match height</a></h2>
+                <p>To expand all children of a container to the same height regardless of their content, for example inside a grid, add the <code>uk-height-match</code> attribute. You can change the height matching behavior by setting the <code>target</code> or <code>row</code> option to the attribute. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>target</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>&gt; *</code></td>
+                                <td align="left">Elements that should match.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>row</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>true</code></td>
+                                <td align="left">By default only items in the same row will be matched. For example, once grid columns extend to a width of 100%, their heights will no longer be matched. This makes sense, for example, if they stack vertically in narrower viewports.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-height-match</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <p><code>target</code> is the <em>Primary</em> option, and its key may be omitted if it's the only option in the attribute value.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">uk-height-match</span>=<span class="hljs-string">".my-class"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span></code></pre> </div>
+                <hr class="uk-margin-large">
+                <h3 id="match-cards" class="uk-h4 tm-heading-fragment"><a href="#match-cards">Match cards</a></h3>
+                <p>You can also target and match specific elements inside the container, like cards. Just add the <code>target: SELECTOR</code> option to the attribute.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-height-match</span>=<span class="hljs-string">"target: SELECTOR"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2@s uk-grid" uk-grid="" uk-height-match="target: > div > .uk-card">
+                                <div class="uk-first-column">
+                                    <div class="uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-card-body" style="min-height: 168px;">Lorem Ipsum</div>
+                                </div>
+                                <div class="uk-grid-margin uk-first-column">
+                                    <div class="uk-card uk-card-default uk-card-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                </div>
+                                <div class="uk-grid-margin">
+                                    <div class="uk-card uk-card-default uk-card-body" style="min-height: 124px;">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khw9nsdp" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2@s"</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-height-match</span>=<span class="hljs-string">"target: &gt; div &gt; .uk-card"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9nsdp" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9nsdp" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h3 id="match-all" class="uk-h4 tm-heading-fragment"><a href="#match-all">Match all</a></h3>
+                <p>If your grid wraps into multiple rows, only grid columns within the same row are matched. To match grid columns across all rows, just add the <code>row: false</code> option to the attribute.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-height-match</span>=<span class="hljs-string">"row: false"</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2@s uk-grid" uk-grid="" uk-height-match="target: > div > .uk-card; row: false">
+                                <div class="uk-first-column">
+                                    <div class="uk-card uk-card-default uk-card-body" style="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                                </div>
+                                <div>
+                                    <div class="uk-card uk-card-default uk-card-body" style="min-height: 168px;">Lorem Ipsum</div>
+                                </div>
+                                <div class="uk-grid-margin uk-first-column">
+                                    <div class="uk-card uk-card-default uk-card-body" style="min-height: 168px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                                </div>
+                                <div class="uk-grid-margin">
+                                    <div class="uk-card uk-card-default uk-card-body" style="min-height: 168px;">Lorem Ipsum</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khw9nsdq" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2@s"</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-height-match</span>=<span class="hljs-string">"target: &gt; div &gt; .uk-card; row: false"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-first-column"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-grid-margin uk-first-column"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-grid-margin"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body"</span>&gt;</span>Lorem Ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9nsdq" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9nsdq" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="component-options" class="uk-h3 tm-heading-fragment"><a href="#component-options">Component options</a></h2>
+                <p>The table below lists the available settings of the <code>uk-height-match</code> attribute. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>target</code></td>
+                                <td align="left">CSS selector</td>
+                                <td align="left"><code>&gt; *</code></td>
+                                <td align="left">Elements that should match. By default, direct children will match.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>row</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>true</code></td>
+                                <td align="left">If your targets wrap into multiple rows, only grid columns within the same row are matched.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="javascript" class="uk-h3 tm-heading-fragment"><a href="#javascript">JavaScript</a></h2>
+                <p>Learn more about <a href="javascript#programmatic-use">JavaScript components</a>.</p>
+                <h3 id="initialization" class="uk-h4 tm-heading-fragment"><a href="#initialization">Initialization</a></h3>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.heightMatch(element, options);</code></pre> </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

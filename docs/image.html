@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image - UIkit tests</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="image" class="uk-h1 tm-heading-fragment"><a href="#image">Image</a></h1>
+                <p class="uk-text-lead">Speed up page loading times and decrease traffic by only loading images as they enter the viewport.</p>
+                <p>The Image component improves page speed significantly by following these methods:</p>
+                <ul class="uk-list uk-list-disc">
+                    <li>Only images which are initially in the viewport are loaded.</li>
+                    <li>Other images are lazy loaded as they enter the viewport when scrolling.</li>
+                    <li>An empty placeholder image is generated instantly to prevent content jumping while images are being loaded or not yet in the viewport.</li>
+                    <li>Optionally, the placeholder image can have any kind of background or preload animation.</li>
+                </ul>
+                <p>The Image components supports the <code>img</code> element and the CSS <code>background-image</code> property. The <code>srcset</code> attribute for images is supported as well creating the optimal images for different device widths and high resolution (retina) displays. The Image component even makes it possible to use <code>srcset</code> for the CSS <code>background-image</code> property.</p>
+                <hr class="uk-margin-large">
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To apply this component, add the <code>uk-img</code> attribute to an <code>&lt;img&gt;</code> element and add the <code>data-</code> prefix to the <code>src</code> attribute so that it reads <code>data-src</code>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span></code></pre> </div>
+                <p>The <code>width</code> and <code>height</code> attributes are required so an empty placeholder can be generated in the exact same size as the image. Alternatively, use <code>data-width</code> and <code>data-height</code> if you don't want to set the explicit attributes.</p>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active"><img data-src="images/light.jpg" width="1800" height="1200" alt="" uk-img="" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>"></li>
+                        <li><pre><code id="code-khw9xgjm" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjm" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjm" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 id="inline-svg" class="uk-h4 tm-heading-fragment"><a href="#inline-svg">Inline SVG</a></h3>
+                <p>To lazy load SVG images which are injected as inline SVG using the <a href="svg">SVG component</a>, make sure to apply the <code>data-src</code> option in the component attribute and not as data attribute.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"data-src:"</span> <span class="hljs-attr">uk-svg</span>&gt;</span></code></pre> </div>
+                <hr class="uk-margin-large">
+                <h2 id="srcset" class="uk-h3 tm-heading-fragment"><a href="#srcset">Srcset</a></h2>
+                <p>To use the <code>srcset</code> attribute, just prefix it as <code>data-srcset</code>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">""</span> <span class="hljs-attr">sizes</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active"><img data-src="https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=650&amp;h=433&amp;q=80" data-srcset="https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=650&amp;h=433&amp;q=80 650w,
+                  https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=1300&amp;h=866&amp;q=80 1300w" sizes="(min-width: 650px) 650px, 100vw" width="650" height="433" alt="" uk-img="" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;650&quot; height=&quot;433&quot;></svg>"> </li>
+                        <li><pre><code id="code-khw9xgjn" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=650&amp;h=433&amp;q=80"</span>
+     <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=650&amp;h=433&amp;q=80 650w,
+                  https://images.unsplash.com/photo-1522201949034-507737bce479?fit=crop&amp;w=1300&amp;h=866&amp;q=80 1300w"</span>
+     <span class="hljs-attr">sizes</span>=<span class="hljs-string">"(min-width: 650px) 650px, 100vw"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"650"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"433"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span>
+</code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjn" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjn" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="background-image" class="uk-h3 tm-heading-fragment"><a href="#background-image">Background image</a></h2>
+                <p>To use this component with the CSS <code>background-image</code> property, add it to a <code>&lt;div&gt;</code> or any other element.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="images/photo.jpg" uk-img="">
+                                <h1>Background Image</h1> </div>
+                        </li>
+                        <li><pre><code id="code-khw9xgjo" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">uk-img</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Background Image<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjo" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjo" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h3 id="background-image-with-srcset" class="uk-h4 tm-heading-fragment"><a href="#background-image-with-srcset">Background image with Srcset</a></h3>
+                <p>The Image component allows you to use <code>srcset</code> for background images. Just add the <code>data-srcset</code> attribute. If you need the <code>sizes</code> attribute, prefix it as <code>data-sizes</code>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">""</span> <span class="hljs-attr">data-sizes</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=650&amp;h=433&amp;q=80" data-srcset="https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=650&amp;h=433&amp;q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=1300&amp;h=866&amp;q=80 1300w" data-sizes="(min-width: 650px) 650px, 100vw" uk-img="">
+                                <h1>Background Image</h1> </div>
+                        </li>
+                        <li><pre><code id="code-khw9xgjp" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light"</span>
+     <span class="hljs-attr">data-src</span>=<span class="hljs-string">"https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=650&amp;h=433&amp;q=80"</span>
+     <span class="hljs-attr">data-srcset</span>=<span class="hljs-string">"https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=650&amp;h=433&amp;q=80 650w,
+                  https://images.unsplash.com/photo-1490822180406-880c226c150b?fit=crop&amp;w=1300&amp;h=866&amp;q=80 1300w"</span>
+     <span class="hljs-attr">data-sizes</span>=<span class="hljs-string">"(min-width: 650px) 650px, 100vw"</span> <span class="hljs-attr">uk-img</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Background Image<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjp" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjp" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="target" class="uk-h3 tm-heading-fragment"><a href="#target">Target</a></h2>
+                <p>Usually, the image starts loading when it enters the viewport. To start loading images based on the viewport visibility of another element, use the <code>target</code> option. This is very useful to lazy load images in the <a href="slideshow">Slideshow</a> and <a href="slider">Slider</a> components.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: .my-class"</span>&gt;</span></code></pre> </div>
+                <p>The following example loads all images in the slides as soon as the slideshow enters the viewport. It uses <code>!.uk-slideshow-items</code> as a target selector. The <code>!</code> looks up the DOM to find the next parent element with the <code>.uk-slideshow-items</code> class.</p>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-position-relative uk-visible-toggle uk-light uk-slideshow" tabindex="-1" uk-slideshow="">
+                                <ul class="uk-slideshow-items" style="min-height: 393.75px;">
+                                    <li tabindex="-1" class="uk-active uk-transition-active" style="transform: translate3d(0px, 0px, 0px);"> <img data-src="images/photo.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !.uk-slideshow-items" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>" style="height: 467px; width: 700px;"> </li>
+                                    <li tabindex="-1"> <img data-src="images/dark.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !.uk-slideshow-items" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>"> </li>
+                                    <li tabindex="-1"> <img data-src="images/light.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !.uk-slideshow-items" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>"> </li>
+                                </ul>
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon uk-slidenav-previous uk-slidenav" href="#" uk-slidenav-previous="" uk-slideshow-item="previous">
+                                    <svg width="14px" height="24px" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-previous">
+                                        <polyline fill="none" stroke="#000" stroke-width="1.4" points="12.775,1 1.225,12 12.775,23 "></polyline>
+                                    </svg>
+                                </a>
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon uk-slidenav-next uk-slidenav" href="#" uk-slidenav-next="" uk-slideshow-item="next">
+                                    <svg width="14px" height="24px" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-next">
+                                        <polyline fill="none" stroke="#000" stroke-width="1.4" points="1.225,23 12.775,12 1.225,1 "></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khw9xgjq" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-relative uk-visible-toggle uk-light"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span> <span class="hljs-attr">uk-slideshow</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-slideshow-items"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !.uk-slideshow-items"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !.uk-slideshow-items"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !.uk-slideshow-items"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center-left uk-position-small uk-hidden-hover"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">uk-slidenav-previous</span> <span class="hljs-attr">uk-slideshow-item</span>=<span class="hljs-string">"previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center-right uk-position-small uk-hidden-hover"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">uk-slidenav-next</span> <span class="hljs-attr">uk-slideshow-item</span>=<span class="hljs-string">"next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjq" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjq" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h3 id="load-previous-and-next" class="uk-h4 tm-heading-fragment"><a href="#load-previous-and-next">Load previous and next</a></h3>
+                <p>It's also possible to load only the image of the active slide and lazy load the images of the other slides. Just target the previous and next slides for each image by using the <code>target: !* -*, !* +*</code> option. There are two exceptions where you have to select the first and the last slides.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Selector</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>!* -*</code></td>
+                                <td align="left">Looks for the direct parent (<code>!*</code>) and selects the preceding element (<code>-*</code>).</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>!* +*</code></td>
+                                <td align="left">Looks for the direct parent (<code>!*</code>) and selects the succeeding element (<code>+*</code>).</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>!.uk-slideshow-items &gt; :last-child</code></td>
+                                <td align="left">Looks for the next parent element with the <code>.uk-slideshow-item</code> class and selects the last child.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>!.uk-slideshow-items &gt; :first-child</code></td>
+                                <td align="left">Looks for the next parent element with the <code>.uk-slideshow-item</code> class and selects the first child.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-slideshow-items"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !ul &gt; :last-child, !* +*"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !* -*, !* +*"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !* -*, !* +*"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">width</span>=<span class="hljs-string">""</span> <span class="hljs-attr">height</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !* -*, !ul &gt; :first-child"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-position-relative uk-visible-toggle uk-light uk-slideshow" tabindex="-1" uk-slideshow="">
+                                <ul class="uk-slideshow-items" style="min-height: 393.75px;">
+                                    <li tabindex="-1" class="uk-active uk-transition-active" style="transform: translate3d(0px, 0px, 0px);"> <img data-src="images/photo.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !ul > :last-child, !* +*" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>" style="height: 467px; width: 700px;"> </li>
+                                    <li tabindex="-1"> <img data-src="images/dark.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !* -*, !* +*" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>"> </li>
+                                    <li tabindex="-1"> <img data-src="images/light.jpg" width="1800" height="1200" alt="" uk-cover="" uk-img="target: !* -*, !ul > :first-child" class="uk-cover" src="data:image/svg+xml;utf8,<svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1800&quot; height=&quot;1200&quot;></svg>"> </li>
+                                </ul>
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover uk-icon uk-slidenav-previous uk-slidenav" href="#" uk-slidenav-previous="" uk-slideshow-item="previous">
+                                    <svg width="14px" height="24px" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-previous">
+                                        <polyline fill="none" stroke="#000" stroke-width="1.4" points="12.775,1 1.225,12 12.775,23 "></polyline>
+                                    </svg>
+                                </a>
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover uk-icon uk-slidenav-next uk-slidenav" href="#" uk-slidenav-next="" uk-slideshow-item="next">
+                                    <svg width="14px" height="24px" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg" data-svg="slidenav-next">
+                                        <polyline fill="none" stroke="#000" stroke-width="1.4" points="1.225,23 12.775,12 1.225,1 "></polyline>
+                                    </svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khw9xgjr" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-relative uk-visible-toggle uk-light"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"-1"</span> <span class="hljs-attr">uk-slideshow</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-slideshow-items"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !ul &gt; :last-child, !* +*"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !* -*, !* +*"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">data-src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"1800"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"1200"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-cover</span> <span class="hljs-attr">uk-img</span>=<span class="hljs-string">"target: !* -*, !ul &gt; :first-child"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center-left uk-position-small uk-hidden-hover"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">uk-slidenav-previous</span> <span class="hljs-attr">uk-slideshow-item</span>=<span class="hljs-string">"previous"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-position-center-right uk-position-small uk-hidden-hover"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span> <span class="hljs-attr">uk-slidenav-next</span> <span class="hljs-attr">uk-slideshow-item</span>=<span class="hljs-string">"next"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khw9xgjr" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khw9xgjr" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="custom-placeholder" class="uk-h3 tm-heading-fragment"><a href="#custom-placeholder">Custom placeholder</a></h2>
+                <p>By default, the placeholder image is transparent. Use the <code>img[data-src][src*='data:image']</code> selector to add a custom background or preload animation.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-css hljs"><span class="hljs-selector-tag">img</span><span class="hljs-selector-attr">[data-src]</span><span class="hljs-selector-attr">[src*='data:image']</span> { <span class="hljs-attribute">background</span>: <span class="hljs-built_in">rgba</span>(0,0,0,0.1); }</code></pre> </div>
+                <hr class="uk-margin-large">
+                <h2 id="component-options" class="uk-h3 tm-heading-fragment"><a href="#component-options">Component options</a></h2>
+                <p>Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>dataSrc</code></td>
+                                <td align="left">String</td>
+                                <td align="left">''</td>
+                                <td align="left">The image's <code>src</code> attribute.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>dataSrcset</code></td>
+                                <td align="left">String</td>
+                                <td align="left">false</td>
+                                <td align="left">The image's <code>srcset</code> attribute.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>sizes</code></td>
+                                <td align="left">String</td>
+                                <td align="left">false</td>
+                                <td align="left">The image's <code>sizes</code> attribute.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>width</code></td>
+                                <td align="left">String</td>
+                                <td align="left">false</td>
+                                <td align="left">The image's <code>width</code> attribute. It will be used to determine the placeholder's width and the position of the image in the document.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>height</code></td>
+                                <td align="left">String</td>
+                                <td align="left">false</td>
+                                <td align="left">The image's <code>height</code> attribute. It will be used to determine the placeholder's height and the position of the image in the document.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>offsetTop</code></td>
+                                <td align="left">String</td>
+                                <td align="left">'50vh'</td>
+                                <td align="left">The offset increases the viewport's bounding box vertically before computing an intersection with the image.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>offsetLeft</code></td>
+                                <td align="left">String</td>
+                                <td align="left">0</td>
+                                <td align="left">The offset increases the viewport's bounding box horizontally before computing an intersection with the image.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>target</code></td>
+                                <td align="left">String</td>
+                                <td align="left">false</td>
+                                <td align="left">A list of targets who's bounding boxes will be used to compute an intersection with the image. Defaults to the image itself.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p><code>dataSrc</code> is the <em>Primary</em> option and its key may be omitted, if it's the only option in the attribute value.</p>
+                <hr class="uk-margin-large">
+                <h2 id="javascript" class="uk-h3 tm-heading-fragment"><a href="#javascript">JavaScript</a></h2>
+                <p>Learn more about <a href="javascript#programmatic-use">JavaScript components</a>.</p>
+                <h3 id="initialization" class="uk-h4 tm-heading-fragment"><a href="#initialization">Initialization</a></h3>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.img(element, options);</code></pre> </div>
+                <p><span class="uk-label">Note</span> The Image component keeps records of already loaded images in the Session Storage. That's how it tries to determine if an image is already cached. A cached image is loaded immediately, without the lazy loading mechanism to prevent any rendering flashes. Prior to testing the Image component, make sure to clear these records from your browser's Session Storage.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

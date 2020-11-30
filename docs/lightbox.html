@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lightbox - UIkit tests</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="lightbox" class="uk-h1 tm-heading-fragment"><a href="#lightbox">Lightbox</a></h1>
+                <p class="uk-text-lead">Create a responsive lightbox gallery with images and videos.</p>
+                <p>The lightbox component is fully responsive and supports touch and swipe navigation, as well as mouse drag for desktops. When swiping between slides the animation literally sticks at your fingertip or mouse cursor. Clicking fast on the previous and next navigation, will make animations even accelerate to keep up with your pace. All animations are hardware accelerated for a smoother performance.</p>
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To apply this component, add the <code>uk-lightbox</code> attribute to a container to turn all anchors inside that container into lightbox links.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"image.jpg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-lightbox=""> <a class="uk-button uk-button-default" href="images/photo.jpg">Open Lightbox</a> </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42k" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span>&gt;</span>Open Lightbox<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42k" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42k" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="alt-attribute" class="uk-h3 tm-heading-fragment"><a href="#alt-attribute">Alt Attribute</a></h2>
+                <p>To add an <code>alt</code> attribute to the image in the lightbox, set the <code>data-alt</code> attribute on an anchor.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"image.jpg"</span> <span class="hljs-attr">data-alt</span>=<span class="hljs-string">"Image"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-lightbox=""> <a class="uk-button uk-button-default" href="images/photo.jpg" data-alt="Image">Open Lightbox</a> </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42l" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-alt</span>=<span class="hljs-string">"Image"</span>&gt;</span>Open Lightbox<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42l" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42l" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="caption" class="uk-h3 tm-heading-fragment"><a href="#caption">Caption</a></h2>
+                <p>To display a caption at the bottom of the lightbox, set the <code>data-caption</code> attribute on an anchor.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"image.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-lightbox=""> <a class="uk-button uk-button-default" href="images/photo.jpg" data-caption="Caption">Open Lightbox</a> </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42m" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption"</span>&gt;</span>Open Lightbox<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42m" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42m" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="animations" class="uk-h3 tm-heading-fragment"><a href="#animations">Animations</a></h2>
+                <p>By default, the Lightbox gallery uses a slide animation. You can set the <code>animation</code> option to use a different one. Possible values are <code>slide</code>, <code>fade</code> and <code>scale</code>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>=<span class="hljs-string">"animation: fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"image.jpg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-h3">Slide</div>
+                            <div class="uk-child-width-1-3@m uk-grid" uk-grid="" uk-lightbox="animation: slide">
+                                <div class="uk-first-column">
+                                    <a class="uk-inline" href="images/photo.jpg" data-caption="Caption 1"> <img src="images/photo.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/dark.jpg" data-caption="Caption 2"> <img src="images/dark.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/light.jpg" data-caption="Caption 3"> <img src="images/light.jpg" alt=""> </a>
+                                </div>
+                            </div>
+                            <div class="uk-h3">Fade</div>
+                            <div class="uk-child-width-1-3@m uk-grid" uk-grid="" uk-lightbox="animation: fade">
+                                <div class="uk-first-column">
+                                    <a class="uk-inline" href="images/photo.jpg" data-caption="Caption 1"> <img src="images/photo.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/dark.jpg" data-caption="Caption 2"> <img src="images/dark.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/light.jpg" data-caption="Caption 3"> <img src="images/light.jpg" alt=""> </a>
+                                </div>
+                            </div>
+                            <div class="uk-h3">Scale</div>
+                            <div class="uk-child-width-1-3@m uk-grid" uk-grid="" uk-lightbox="animation: scale">
+                                <div class="uk-first-column">
+                                    <a class="uk-inline" href="images/photo.jpg" data-caption="Caption 1"> <img src="images/photo.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/dark.jpg" data-caption="Caption 2"> <img src="images/dark.jpg" alt=""> </a>
+                                </div>
+                                <div>
+                                    <a class="uk-inline" href="images/light.jpg" data-caption="Caption 3"> <img src="images/light.jpg" alt=""> </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42n" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-h3"</span>&gt;</span>Slide<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-3@m"</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-lightbox</span>=<span class="hljs-string">"animation: slide"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 2"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 3"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-h3"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-3@m"</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-lightbox</span>=<span class="hljs-string">"animation: fade"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 2"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 3"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-h3"</span>&gt;</span>Scale<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-3@m"</span> <span class="hljs-attr">uk-grid</span> <span class="hljs-attr">uk-lightbox</span>=<span class="hljs-string">"animation: scale"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 1"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 2"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-inline"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Caption 3"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/light.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42n" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42n" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="content-sources" class="uk-h3 tm-heading-fragment"><a href="#content-sources">Content sources</a></h2>
+                <p>A lightbox is not restricted to images. Other media, like videos, can be displayed as well. The video will pause whenever it's not visible and resume once it becomes visible again. To display a poster image for a video, set the <code>data-poster</code> attribute.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"video.mp4"</span> <span class="hljs-attr">data-poster</span>=<span class="hljs-string">"image.jpg"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.youtube.com/watch?v=c2pz2mlSfXA"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://vimeo.com/1084537"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.google.com/maps"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-lightbox=""> <a class="uk-button uk-button-default" href="images/photo.jpg" data-caption="Image">Image</a> <a class="uk-button uk-button-default" href="https://yootheme.com/site/images/media/yootheme-pro.mp4" data-caption="Video">Video</a> <a class="uk-button uk-button-default" href="https://www.youtube.com/watch?v=c2pz2mlSfXA" data-caption="YouTube">YouTube</a> <a class="uk-button uk-button-default" href="https://vimeo.com/1084537" data-caption="Vimeo">Vimeo</a> <a class="uk-button uk-button-default" href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938" data-caption="Google Maps" data-type="iframe">Google Maps</a> </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42o" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"images/photo.jpg"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Image"</span>&gt;</span>Image<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://yootheme.com/site/images/media/yootheme-pro.mp4"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Video"</span>&gt;</span>Video<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.youtube.com/watch?v=c2pz2mlSfXA"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"YouTube"</span>&gt;</span>YouTube<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://vimeo.com/1084537"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Vimeo"</span>&gt;</span>Vimeo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4740.819266853735!2d9.99008871708242!3d53.550454675412404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x3f9d24afe84a0263!2sRathaus!5e0!3m2!1sde!2sde!4v1499675200938"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"Google Maps"</span> <span class="hljs-attr">data-type</span>=<span class="hljs-string">"iframe"</span>&gt;</span>Google Maps<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42o" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42o" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p><span class="uk-label">Note</span> Use <code>youtube-nocookie.com</code> within the YouTube link and the lightbox will use the domain to embed the YouTube video.</p>
+                <hr class="uk-margin-large">
+                <h3 id="manual-content-type" class="uk-h4 tm-heading-fragment"><a href="#manual-content-type">Manual content type</a></h3>
+                <p>The Lightbox uses the <code>href</code> attribute to figure out the type of the linked content. If no filename extension is defined in the path, just add the <code>data-type</code> attribute to the <code>&lt;a&gt;</code> tag.</p>
+                <p><strong>Hint</strong> YouTube and Vimeo Urls will be handled automatically.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>data-type="image"</code></td>
+                                <td align="left">The content type is an image.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>data-type="video"</code></td>
+                                <td align="left">The content type is a video.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>data-type="iframe"</code></td>
+                                <td align="left">The content type is a regular website.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="custom-attributes" class="uk-h3 tm-heading-fragment"><a href="#custom-attributes">Custom Attributes</a></h2>
+                <p>You can add custom attributes to lightbox content items by using the <code>data-attrs</code> attribute. The attributes are passed like the usual component options, e.g. <code>data-attrs="width: 1280; height: 720;"</code></p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.youtube.com/watch?v=c2pz2mlSfXA"</span> <span class="hljs-attr">data-attrs</span>=<span class="hljs-string">"width: 1280; height: 720;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div uk-lightbox=""> <a class="uk-button uk-button-default" href="https://www.youtube.com/watch?v=c2pz2mlSfXA" data-caption="YouTube" data-attrs="width: 1280; height: 720;">YouTube</a> </div>
+                        </li>
+                        <li><pre><code id="code-khwaj42p" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">uk-lightbox</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-button uk-button-default"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://www.youtube.com/watch?v=c2pz2mlSfXA"</span> <span class="hljs-attr">data-caption</span>=<span class="hljs-string">"YouTube"</span> <span class="hljs-attr">data-attrs</span>=<span class="hljs-string">"width: 1280; height: 720;"</span>&gt;</span>YouTube<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khwaj42p" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khwaj42p" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="component-options" class="uk-h3 tm-heading-fragment"><a href="#component-options">Component options</a></h2>
+                <p>Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. <a href="javascript#component-configuration">Learn more</a></p>
+                <h3 id="lightbox" class="uk-h4 tm-heading-fragment"><a href="#lightbox">Lightbox</a></h3>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>animation</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>slide</code></td>
+                                <td align="left">Lightbox animation mode: <code>slide</code>, <code>fade</code> or <code>scale</code>.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>autoplay</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>0</code></td>
+                                <td align="left">Lightbox autoplays. (Delay in milliseconds)</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>autoplay-interval</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>0</code></td>
+                                <td align="left">The delay between switching slides in autoplay mode.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pause-on-hover</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left">false</td>
+                                <td align="left">Pause autoplay mode on hover.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>video-autoplay</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left">false</td>
+                                <td align="left">Lightbox videos autoplay.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>index</code></td>
+                                <td align="left">String, Integer</td>
+                                <td align="left">0</td>
+                                <td align="left">Lightbox item to show. 0 based index.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>toggle</code></td>
+                                <td align="left">CSS selector</td>
+                                <td align="left"><code>a</code></td>
+                                <td align="left">Toggle selector - opens the Lightbox Panel upon click.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="javascript" class="uk-h3 tm-heading-fragment"><a href="#javascript">JavaScript</a></h2>
+                <p>Learn more about <a href="javascript#programmatic-use">JavaScript components</a>.</p>
+                <h3 id="initialization" class="uk-h4 tm-heading-fragment"><a href="#initialization">Initialization</a></h3>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript"><span class="hljs-comment">// To apply lightbox to a group of links</span>
+UIkit.lightbox(element, options);
+
+<span class="hljs-comment">// To dynamically initialize the lightbox panel</span>
+UIkit.lightboxPanel(panelOptions);</code></pre> </div>
+                <h3 id="methods" class="uk-h4 tm-heading-fragment"><a href="#methods">Methods</a></h3>
+                <p>The following methods are available for the component:</p>
+                <h4 id="show" class="uk-h5 tm-heading-fragment"><a href="#show">Show</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightbox(element).show(index);</code></pre> </div>
+                <p>Shows the Lightbox's Panel and item.</p>
+                <h4 id="hide" class="uk-h5 tm-heading-fragment"><a href="#hide">Hide</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightbox(element).hide();</code></pre> </div>
+                <p>Hides the Lightbox's Panel.</p>
+                <h3 id="lightbox-panel-options" class="uk-h4 tm-heading-fragment"><a href="#lightbox-panel-options">Lightbox Panel Options</a></h3>
+                <p>If you only want to use the lightbox panel directly through the JS API, you can set the following options.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>animation</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>slide</code></td>
+                                <td align="left">Lightbox animation mode: <code>slide</code>, <code>fade</code> or <code>scale</code>.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>autoplay</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Lightbox autoplays.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>autoplay-interval</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>7000</code></td>
+                                <td align="left">The delay between switching slides in autoplay mode.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>pause-on-hover</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Pause autoplay mode on hover.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>video-autoplay</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Lightbox videos autoplay.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>index</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>0</code></td>
+                                <td align="left">The initial item to show. (zero based)</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>velocity</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>2</code></td>
+                                <td align="left">The animation velocity (pixel/ms).</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>preload</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>1</code></td>
+                                <td align="left">The number of items to preload. (left and right of the currently active item)</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>items</code></td>
+                                <td align="left">Array</td>
+                                <td align="left"><code>[]</code></td>
+                                <td align="left">An array of items to display, e.g. <code>[{source: 'images/size1.jpg', caption: '900x600'}]</code></td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>template</code></td>
+                                <td align="left">String</td>
+                                <td align="left">Default markup</td>
+                                <td align="left">The template string.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>delay-controls</code></td>
+                                <td align="left">Number</td>
+                                <td align="left"><code>3000</code></td>
+                                <td align="left">Delay time before controls fade out in ms.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>container</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>body</code></td>
+                                <td align="left">Define a target container via a selector to specify where the Lightbox should be appended in the DOM.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 id="events" class="uk-h4 tm-heading-fragment"><a href="#events">Events</a></h3>
+                <p>The following events will be triggered on elements with this component attached:</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Name</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>beforeshow</code></td>
+                                <td align="left">Fires before the Lightbox is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>beforehide</code></td>
+                                <td align="left">Fires before the Lightbox is hidden.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>show</code></td>
+                                <td align="left">Fires after the Lightbox is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>shown</code></td>
+                                <td align="left">Fires after the Lightbox's show animation has completed.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>hide</code></td>
+                                <td align="left">Fires after the Lightbox's hide animation has started.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>hidden</code></td>
+                                <td align="left">Fires after the Lightbox is hidden.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>itemload</code></td>
+                                <td align="left">Fires when an item loads.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>beforeitemshow</code></td>
+                                <td align="left">Fires before an item is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>itemshow</code></td>
+                                <td align="left">Fires after an item is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>itemshown</code></td>
+                                <td align="left">Fires after an item's show animation has completed.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>beforeitemhide</code></td>
+                                <td align="left">Fires before an item is hidden.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>itemhide</code></td>
+                                <td align="left">Fires after an item's hide animation has started.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>itemhidden</code></td>
+                                <td align="left">Fires after an item's hide animation has completed.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h3 id="methods" class="uk-h4 tm-heading-fragment"><a href="#methods">Methods</a></h3>
+                <p>The following methods are available for the component:</p>
+                <h4 id="show" class="uk-h5 tm-heading-fragment"><a href="#show">Show</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightboxPanel(element).show(index);</code></pre> </div>
+                <p>Shows the Lightbox Panel and item.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Name</th>
+                                <th align="left">Type</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>index</code></td>
+                                <td align="left">String, Integer</td>
+                                <td align="left">0</td>
+                                <td align="left">Lightbox item to show. 0 based index.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h4 id="hide" class="uk-h5 tm-heading-fragment"><a href="#hide">Hide</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightboxPanel(element).hide();</code></pre> </div>
+                <p>Hides the Lightbox Panel.</p>
+                <h4 id="startautoplay" class="uk-h5 tm-heading-fragment"><a href="#startautoplay">startAutoplay</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightboxPanel(element).startAutoplay();</code></pre> </div>
+                <p>Starts the Lightbox's autoplay.</p>
+                <h4 id="stopautoplay" class="uk-h5 tm-heading-fragment"><a href="#stopautoplay">stopAutoplay</a></h4>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.lightboxPanel(element).stopAutoplay();</code></pre> </div>
+                <p>Stops the Lightbox's autoplay.</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

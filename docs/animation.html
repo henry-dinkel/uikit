@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Animation - UIkit tests</title>
+        <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="animation" class="uk-h1 tm-heading-fragment"><a href="#animation">Animation</a></h1>
+                <p class="uk-text-lead">A collection of smooth animations to use within your page.</p>
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>Add one of the <code>.uk-animation-*</code> classes to any element. The animation is shown when the class is added, so usually immediately on page load. To show the animation at another point, for example when the element enters the viewport, you would add the class using JavaScript — with the <a href="scrollspy">Scrollspy component</a> for instance. This is what happens in many of UIkit's components that make use of animations. All animations themselves are implemented with CSS, so they do not require JavaScript to play.</p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Class</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>.uk-animation-fade</code></td>
+                                <td align="left">The element fades in.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-scale-up</code>
+                                    <br> <code>.uk-animation-scale-down</code></td>
+                                <td align="left">The element fades in and scales up or down.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-slide-top</code>
+                                    <br> <code>.uk-animation-slide-bottom</code> <code>.uk-animation-slide-left</code>
+                                    <br> <code>.uk-animation-slide-right</code></td>
+                                <td align="left">The element fades and slides in from the top, bottom, left or right by its own height or width.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-slide-top-small</code>
+                                    <br> <code>.uk-animation-slide-bottom-small</code> <code>.uk-animation-slide-left-small</code>
+                                    <br> <code>.uk-animation-slide-right-small</code></td>
+                                <td align="left">The element fades and slides in from the top, bottom, left or right with a smaller distance which is specified by a fixed pixel value.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-slide-top-medium</code>
+                                    <br> <code>.uk-animation-slide-bottom-medium</code> <code>.uk-animation-slide-left-medium</code>
+                                    <br> <code>.uk-animation-slide-right-medium</code></td>
+                                <td align="left">The element fades and slides in from the top, bottom, left or right with a medium distance which is specified by a fixed pixel value.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-kenburns</code></td>
+                                <td align="left">The element scales very slowly up without fading in.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-shake</code></td>
+                                <td align="left">The element shakes.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>.uk-animation-stroke</code></td>
+                                <td align="left">The SVG element strokes are drawn.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>To toggle an animation on hover or focus, add the <code>.uk-animation-toggle</code> class to a parent element. Also add <code>tabindex="0"</code> to make the animation focusable through keyboard navigation and on touch devices.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-fade"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-grid" uk-grid="">
+                                <div class="uk-animation-toggle uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+                                        <p class="uk-text-center">Fade</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+                                        <p class="uk-text-center">Scale Up</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-down">
+                                        <p class="uk-text-center">Scale Down</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-shake">
+                                        <p class="uk-text-center">Shake</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+                                        <p class="uk-text-center">Left</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top">
+                                        <p class="uk-text-center">Top</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom">
+                                        <p class="uk-text-center">Bottom</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+                                        <p class="uk-text-center">Right</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-small">
+                                        <p class="uk-text-center">Left Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-small">
+                                        <p class="uk-text-center">Top Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-small">
+                                        <p class="uk-text-center">Bottom Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-small">
+                                        <p class="uk-text-center">Right Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-medium">
+                                        <p class="uk-text-center">Left Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium">
+                                        <p class="uk-text-center">Top Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-medium">
+                                        <p class="uk-text-center">Bottom Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-medium">
+                                        <p class="uk-text-center">Right Medium</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fiy" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-fade"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-up"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Scale Up<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-down"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Scale Down<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-shake"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Shake<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left-small"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top-small"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom-small"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right-small"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left-medium"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top-medium"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom-medium"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right-medium"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fiy" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fiy" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="reverse-modifier" class="uk-h3 tm-heading-fragment"><a href="#reverse-modifier">Reverse modifier</a></h2>
+                <p>By default, all animations are incoming. To reverse any animation, add the <code>.uk-animation-reverse</code> class.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-fade uk-animation-reverse"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match uk-grid" uk-grid="">
+                                <div class="uk-animation-toggle uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-fade uk-animation-reverse">
+                                        <p class="uk-text-center">Fade</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-animation-reverse">
+                                        <p class="uk-text-center">Scale Up</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-down uk-animation-reverse">
+                                        <p class="uk-text-center">Scale Down</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-shake uk-animation-reverse">
+                                        <p class="uk-text-center">Shake</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left uk-animation-reverse">
+                                        <p class="uk-text-center">Left</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top uk-animation-reverse">
+                                        <p class="uk-text-center">Top</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom uk-animation-reverse">
+                                        <p class="uk-text-center">Bottom</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right uk-animation-reverse">
+                                        <p class="uk-text-center">Right</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-small uk-animation-reverse">
+                                        <p class="uk-text-center">Left Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-small uk-animation-reverse">
+                                        <p class="uk-text-center">Top Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-small uk-animation-reverse">
+                                        <p class="uk-text-center">Bottom Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-small uk-animation-reverse">
+                                        <p class="uk-text-center">Right Small</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left-medium uk-animation-reverse">
+                                        <p class="uk-text-center">Left Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-top-medium uk-animation-reverse">
+                                        <p class="uk-text-center">Top Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-bottom-medium uk-animation-reverse">
+                                        <p class="uk-text-center">Bottom Medium</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle uk-grid-margin" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right-medium uk-animation-reverse">
+                                        <p class="uk-text-center">Right Medium</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fiz" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2 uk-child-width-1-4@s uk-grid-match"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-fade uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-up uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Scale Up<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-down uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Scale Down<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-shake uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Shake<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left-small uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top-small uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom-small uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right-small uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right Small<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-left-medium uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Left Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-top-medium uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-bottom-medium uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-slide-right-medium uk-animation-reverse"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Right Medium<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fiz" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fiz" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="fast-modifier" class="uk-h3 tm-heading-fragment"><a href="#fast-modifier">Fast modifier</a></h2>
+                <p>To play animations at a faster speed, add the <code>.uk-animation-fast</code> class to the element.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-fade uk-animation-fast"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-width-1-3@s">
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-fast uk-animation-fade">
+                                        <p class="uk-text-center">Fade</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fj0" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-width-1-3@s"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-fast uk-animation-fade"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Fade<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fj0" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fj0" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="origin-modifiers" class="uk-h3 tm-heading-fragment"><a href="#origin-modifiers">Origin modifiers</a></h2>
+                <p>By default, scaling animations originate from the center. To modify this behavior, add one of the <code>.uk-transform-origin-*</code> classes from the <a href="utility#transform-origin">Utility component</a>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-scale-up uk-transform-origin-bottom-right"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-3@s uk-grid" uk-grid="">
+                                <div class="uk-animation-toggle uk-first-column" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-bottom-right">
+                                        <p class="uk-text-center">Bottom Right</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center">
+                                        <p class="uk-text-center">Top Center</p>
+                                    </div>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0">
+                                    <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-bottom-center">
+                                        <p class="uk-text-center">Bottom Center</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fj1" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-3@s"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-bottom-right"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Right<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-top-center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Top Center<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-card uk-card-default uk-card-body uk-animation-scale-up uk-transform-origin-bottom-center"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-text-center"</span>&gt;</span>Bottom Center<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fj1" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fj1" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="ken-burns" class="uk-h3 tm-heading-fragment"><a href="#ken-burns">Ken Burns</a></h2>
+                <p>To add a simple Ken Burns effect, add the <code>.uk-animation-kenburns</code> class to any image. You can also apply the <code>.uk-animation-reverse</code> or one of the <code>.uk-transform-origin-*</code> classes from the <a href="utility#transform-origin">Utility component</a> to modify the effect.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-kenburns"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span></code></pre> </div>
+                <p>By default the animation starts on page load. In this example we used the <a href="scrollspy">Scrollspy</a> component, to toggle the effect when the image enters the view.</p>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2@s uk-grid-small uk-grid" uk-grid="">
+                                <div class="uk-first-column">
+                                    <div class="uk-overflow-hidden"> <img src="images/dark.jpg" alt="Example image" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" style="visibility: hidden;"> </div>
+                                </div>
+                                <div>
+                                    <div class="uk-overflow-hidden"> <img src="images/dark.jpg" alt="Example image" class="uk-animation-reverse uk-transform-origin-top-right" uk-scrollspy="cls: uk-animation-kenburns; repeat: true" style="visibility: hidden;"> </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fj2" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2@s uk-grid-small"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-overflow-hidden"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Example image"</span> <span class="hljs-attr">uk-scrollspy</span>=<span class="hljs-string">"cls: uk-animation-kenburns; repeat: true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-overflow-hidden"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/dark.jpg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Example image"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-reverse uk-transform-origin-top-right"</span> <span class="hljs-attr">uk-scrollspy</span>=<span class="hljs-string">"cls: uk-animation-kenburns; repeat: true"</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fj2" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fj2" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="svg-strokes" class="uk-h3 tm-heading-fragment"><a href="#svg-strokes">SVG Strokes</a></h2>
+                <p>The Animation component can be used to animate SVG strokes. The effect looks like the SVG strokes are drawn before your eyes. The SVG image has to be injected into the markup as an inline SVG. This can be done manually or using the <a href="svg">SVG component</a>.</p>
+                <p>The following example shows how to add the inline SVG manually. Since you have to know the exact length of the stroke, UIkit requires you to set the length in the custom property <code>--uk-animation-stroke</code>. In this example the stroke length is <code>46</code>.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">svg</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-stroke"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"--uk-animation-stroke: 46;"</span> <span class="hljs-attr">viewBox</span>=<span class="hljs-string">"0 0 20 20"</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">"http://www.w3.org/2000/svg"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">path</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">"none"</span> <span class="hljs-attr">stroke</span>=<span class="hljs-string">"#000"</span> <span class="hljs-attr">stroke-width</span>=<span class="hljs-string">"1"</span> <span class="hljs-attr">d</span>=<span class="hljs-string">""</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span></code></pre> </div>
+                <p>A much easier way is to use the <a href="svg">SVG component</a> by adding <code>uk-svg="stroke-animation: true"</code> to the image element. It will calculate the stroke length and add the <code>--uk-animation-stroke</code> custom property automatically.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-svg</span>=<span class="hljs-string">"stroke-animation: true"</span>&gt;</span></code></pre> </div>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <div class="uk-child-width-1-2@m uk-text-center uk-grid" uk-grid="">
+                                <div class="uk-animation-toggle uk-first-column" tabindex="0"> <img class="uk-animation-stroke" width="400" height="400" src="images/strokes.svg" alt="" uk-svg="stroke-animation: true" hidden="">
+                                    <svg width="400" height="400" viewBox="0 0 350 340" xmlns="http://www.w3.org/2000/svg" class="uk-animation-stroke uk-svg" data-svg="images/strokes.svg" style="--uk-animation-stroke:394;">
+                                        <polygon points="142.6 273.5 92.4 273.5 64 322 171 322 142.6 273.5" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                                        <rect x="102" y="263" width="31" height="10" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <rect x="41" y="248" width="102" height="15" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <polyline points="186.8 200.4 277.9 25.7 296.8 12.3" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <polyline points="89.1 190.6 257 1.5 296.8 12.3 336.9 89" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <circle cx="338.4" cy="94.8" r="5.3" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                                        <line x1="338.4" y1="207.4" x2="338.4" y2="100.1" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                        <path d="M332.5,228.4a8,8,0,0,0-.5,2.1,6.77,6.77,0,1,0,8.2-6.1,2.36,2.36,0,0,1-1.8-2.3h0v-5.2" fill="none" stroke="#0045d4" stroke-linecap="round" stroke-width="2"></path>
+                                        <circle cx="338.5" cy="212.7" r="4.2" fill="none" stroke="#0045d4" stroke-width="2"></circle>
+                                        <rect x="3" y="191" width="140" height="57" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <polygon points="193 201 193 242 179 263 143 263 143 197 193 201" fill="none" stroke="#000" stroke-width="2"></polygon>
+                                        <polygon points="185 243 175 258 160 258 160 243 185 243" fill="none" stroke="#0045d4" stroke-width="2"></polygon>
+                                        <rect x="160" y="209" width="26" height="28" fill="none" stroke="#0045d4" stroke-width="2"></rect>
+                                        <polyline points="220.2 135.2 139.8 135.2 170.8 199.1" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <rect x="57" y="322" width="120" height="17" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"></rect>
+                                        <line x1="257" y1="1.5" x2="334" y2="90.7" fill="none" stroke="#000" stroke-width="2"></line>
+                                    </svg>
+                                </div>
+                                <div class="uk-animation-toggle" tabindex="0"> <img class="uk-animation-stroke uk-animation-reverse" width="400" height="400" src="images/strokes.svg" alt="" uk-svg="stroke-animation: true" hidden="">
+                                    <svg width="400" height="400" viewBox="0 0 350 340" xmlns="http://www.w3.org/2000/svg" class="uk-animation-stroke uk-animation-reverse uk-svg" data-svg="images/strokes.svg" style="--uk-animation-stroke:394;">
+                                        <polygon points="142.6 273.5 92.4 273.5 64 322 171 322 142.6 273.5" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                                        <rect x="102" y="263" width="31" height="10" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <rect x="41" y="248" width="102" height="15" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <polyline points="186.8 200.4 277.9 25.7 296.8 12.3" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <polyline points="89.1 190.6 257 1.5 296.8 12.3 336.9 89" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <circle cx="338.4" cy="94.8" r="5.3" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                                        <line x1="338.4" y1="207.4" x2="338.4" y2="100.1" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                        <path d="M332.5,228.4a8,8,0,0,0-.5,2.1,6.77,6.77,0,1,0,8.2-6.1,2.36,2.36,0,0,1-1.8-2.3h0v-5.2" fill="none" stroke="#0045d4" stroke-linecap="round" stroke-width="2"></path>
+                                        <circle cx="338.5" cy="212.7" r="4.2" fill="none" stroke="#0045d4" stroke-width="2"></circle>
+                                        <rect x="3" y="191" width="140" height="57" fill="none" stroke="#000" stroke-width="2"></rect>
+                                        <polygon points="193 201 193 242 179 263 143 263 143 197 193 201" fill="none" stroke="#000" stroke-width="2"></polygon>
+                                        <polygon points="185 243 175 258 160 258 160 243 185 243" fill="none" stroke="#0045d4" stroke-width="2"></polygon>
+                                        <rect x="160" y="209" width="26" height="28" fill="none" stroke="#0045d4" stroke-width="2"></rect>
+                                        <polyline points="220.2 135.2 139.8 135.2 170.8 199.1" fill="none" stroke="#000" stroke-width="2"></polyline>
+                                        <rect x="57" y="322" width="120" height="17" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="2"></rect>
+                                        <line x1="257" y1="1.5" x2="334" y2="90.7" fill="none" stroke="#000" stroke-width="2"></line>
+                                    </svg>
+                                </div>
+                            </div>
+                        </li>
+                        <li><pre><code id="code-khqk1fj3" class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-child-width-1-2@m uk-text-center"</span> <span class="hljs-attr">uk-grid</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-stroke"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/strokes.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-svg</span>=<span class="hljs-string">"stroke-animation: true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-toggle"</span> <span class="hljs-attr">tabindex</span>=<span class="hljs-string">"0"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"uk-animation-stroke uk-animation-reverse"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"400"</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"images/strokes.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-svg</span>=<span class="hljs-string">"stroke-animation: true"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khqk1fj3" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khqk1fj3" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

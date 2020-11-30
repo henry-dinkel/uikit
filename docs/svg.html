@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SVG - UIkit</title>
+    <link rel="stylesheet" href="../dist/css/uikit.theme.css">
+    <!--JS-->
+    <script src="../dist/js/uikit.min.js"></script>
+    <script src="../dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <nav class="uk-navbar uk-navbar-container uk-padding uk-padding-remove-bottom uk-padding-remove-top">
+        <div class="uk-navbar-left">
+            <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#" uk-toggle="target: #offcanvas-slide"></a>
+            <div class="uk-logo">UI Kit</div>
+        </div>
+    </nav>
+    <div class="uk-container uk-container-small uk-position-relative uk-margin-large-top uk-margin-large-bottom">
+        <div>
+            <!---->
+            <div>
+                <h1 id="svg" class="uk-h1 tm-heading-fragment"><a href="#svg">SVG</a></h1>
+                <p class="uk-text-lead">Inject inline SVG images into the page markup and style them with CSS.</p>
+                <p>SVGs or Scalable Vector Graphics are really handy, for example to display a logo that remains crisp when scaling or that is animated. The SVG component provides more control to style and animate the image and its vector parts. It injects the image into the markup as an inline SVG including all attributes, like IDs, classes, width and height, so that they can easily be targeted using CSS.</p>
+                <hr class="uk-margin-large">
+                <h2 id="usage" class="uk-h3 tm-heading-fragment"><a href="#usage">Usage</a></h2>
+                <p>To apply this component, add the <code>uk-svg</code> attribute to an <code>&lt;img&gt;</code> element.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-html hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">""</span> <span class="hljs-attr">uk-svg</span>&gt;</span></code></pre> </div>
+                <p>Using the <code>uk-svg</code> attribute also allows you to inject a symbol from the SVG file. Just append the symbol's ID to the image path as you would in any fragmented URL.</p>
+                <div class="uk-position-relative uk-margin-medium">
+                    <ul uk-tab="swiping: false" class="uk-tab">
+                        <li class="uk-active"><a href="#" aria-expanded="true">Preview</a></li>
+                        <li><a href="#" aria-expanded="false">Markup</a></li>
+                    </ul>
+                    <ul class="uk-switcher uk-margin">
+                        <li class="uk-active">
+                            <!-- Targets the SVG image --><img src="../assets/uikit/src/images/icons/cloud-download.svg" width="40" height="40" uk-svg="" hidden="">
+                            <svg width="40" height="40" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class=" uk-svg" data-svg="../assets/uikit/src/images/icons/cloud-download.svg">
+                                <path fill="none" stroke="#000" stroke-width="1.1" d="M6.5,14.61 L3.75,14.61 C1.96,14.61 0.5,13.17 0.5,11.39 C0.5,9.76 1.72,8.41 3.3,8.2 C3.38,5.31 5.75,3 8.68,3 C11.19,3 13.31,4.71 13.89,7.02 C14.39,6.8 14.93,6.68 15.5,6.68 C17.71,6.68 19.5,8.45 19.5,10.64 C19.5,12.83 17.71,14.6 15.5,14.6 L12.5,14.6"></path>
+                                <polyline fill="none" stroke="#000" points="11.75 16 9.5 18.25 7.25 16"></polyline>
+                                <path fill="none" stroke="#000" d="M9.5,18 L9.5,9.5"></path>
+                            </svg>
+                            <!-- Targets a symbol inside the SVG image --><img src="../assets/uikit/tests/images/icons.svg#cloud-upload" width="40" height="40" uk-svg="" hidden="">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class=" uk-svg" width="40" height="40" data-svg="cloud-upload">
+                                <path fill="none" stroke="#000" stroke-width="1.1" d="M6.5,14.61 L3.75,14.61 C1.96,14.61 0.5,13.17 0.5,11.39 C0.5,9.76 1.72,8.41 3.31,8.2 C3.38,5.31 5.75,3 8.68,3 C11.19,3 13.31,4.71 13.89,7.02 C14.39,6.8 14.93,6.68 15.5,6.68 C17.71,6.68 19.5,8.45 19.5,10.64 C19.5,12.83 17.71,14.6 15.5,14.6 L12.5,14.6"></path>
+                                <polyline fill="none" stroke="#000" points="7.25 11.75 9.5 9.5 11.75 11.75"></polyline>
+                                <path fill="none" stroke="#000" d="M9.5,18 L9.5,9.5"></path>
+                            </svg>
+                        </li>
+                        <li><pre><code id="code-khxoor9f" class="lang-html hljs xml"><span class="hljs-comment">&lt;!-- Targets the SVG image --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../assets/uikit/src/images/icons/cloud-download.svg"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">uk-svg</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Targets a symbol inside the SVG image --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"../assets/uikit/tests/images/icons.svg#cloud-upload"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"40"</span> <span class="hljs-attr">uk-svg</span>&gt;</span></code></pre></li>
+                    </ul>
+                    <div class="uk-position-top-right uk-margin-small-top">
+                        <ul class="uk-iconnav">
+                            <li>
+                                <a class="js-copy" uk-tooltip="Copy to Clipboard" rel="#code-khxoor9f" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-clipboard.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-clipboard.svg">
+                                        <line fill="none" stroke="#000" x1="5.5" y1="9.5" x2="15" y2="9.5"></line>
+                                        <line fill="none" stroke="#000" x1="5" y1="1.5" x2="9" y2="1.5"></line>
+                                        <polyline fill="none" stroke="#000" stroke-width="1.03" points="8.5,6.5 5.5,9.5 8.5,12.5"></polyline>
+                                        <polyline fill="none" stroke="#000" points="12.5,7 12.5,2.5 9.5,2.5 9.5,3.5 4.5,3.5 4.5,2.5 1.5,2.5 1.5,15.5 12.5,15.5 12.5,12"></polyline>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="js-codepen" uk-tooltip="Edit on Codepen" rel="#code-khxoor9f" title="" aria-expanded="false"><img class="uk-icon" src="../images/icon-flask.svg" uk-svg="" hidden="">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" class="uk-icon uk-svg" data-svg="../images/icon-flask.svg">
+                                        <line fill="none" stroke="#000" x1="5" y1="7.5" x2="12" y2="7.5"></line>
+                                        <line fill="none" stroke="#000" x1="4" y1="1.5" x2="13" y2="1.5"></line>
+                                        <path fill="none" stroke="#000" d="M5.078,1.5l1.433,1.868C6.952,3.93,6.948,4.839,6.646,5.48L2.147,12 c-0.418,0.962,0.028,2.5,1.353,2.5h10c1.328,0,1.777-1.538,1.359-2.5L10.4,5.479c-0.303-0.641-0.31-1.55,0.136-2.112L11.922,1.5"></path>
+                                        <circle fill="#000" cx="10.5" cy="9.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="11.5" cy="11.5" r="0.5"></circle>
+                                        <circle fill="#000" cx="8.5" cy="11.5" r="0.5"></circle>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p><span class="uk-label">Note</span> SVGs will adapt the current color for their stroke and fill color. To prevent this behavior, add the <code>.uk-preserve</code> class to the SVG itself or the elements inside the SVG.</p>
+                <p>Inline SVG images can also be lazy loaded using the the <a href="image#inline-svg">Image component</a>.</p>
+                <hr class="uk-margin-large">
+                <h2 id="stroke-animation" class="uk-h3 tm-heading-fragment"><a href="#stroke-animation">Stroke Animation</a></h2>
+                <p>There are two ways to animate SVG strokes. First by using the <a href="animation#svg-strokes">Animation component</a> and <code>uk-svg="stroke-animation: true"</code>, and second by using the <a href="parallax#svg-strokes">Parallax component</a>.</p>
+                <hr class="uk-margin-large">
+                <h2 id="component-options" class="uk-h3 tm-heading-fragment"><a href="#component-options">Component options</a></h2>
+                <p>Any of these options can be applied to the component attribute. Separate multiple options with a semicolon. <a href="javascript#component-configuration">Learn more</a></p>
+                <div class="uk-overflow-auto">
+                    <table class="uk-table uk-table-divider">
+                        <thead>
+                            <tr>
+                                <th align="left">Option</th>
+                                <th align="left">Value</th>
+                                <th align="left">Default</th>
+                                <th align="left">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><code>src</code></td>
+                                <td align="left">String</td>
+                                <td align="left"><code>''</code></td>
+                                <td align="left">The SVG source URL. If a location hash is present, only the <code>&lt;symbol&gt;</code> of the SVG with the given ID is shown.</td>
+                            </tr>
+                            <tr>
+                                <td align="left"><code>stroke-animation</code></td>
+                                <td align="left">Boolean</td>
+                                <td align="left"><code>false</code></td>
+                                <td align="left">Animate all elements with the <code>stroke</code> attribute in the SVG.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="uk-margin-large">
+                <h2 id="javascript" class="uk-h3 tm-heading-fragment"><a href="#javascript">JavaScript</a></h2>
+                <p>Learn more about <a href="javascript#programmatic-use">JavaScript components</a>.</p>
+                <h3 id="initialization" class="uk-h4 tm-heading-fragment"><a href="#initialization">Initialization</a></h3>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.svg(element, options);</code></pre> </div>
+                <h3 id="properties" class="uk-h4 tm-heading-fragment"><a href="#properties">Properties</a></h3>
+                <h4 id="svg" class="uk-h5 tm-heading-fragment"><a href="#svg">svg</a></h4>
+                <p>A JavaScript Promise that will resolve with the added SVG Node.</p>
+                <div class="uk-margin-medium"><pre><code class="lang-js hljs javascript">UIkit.svg(element).svg.then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">svg</span>) </span>{ svg.querySelector(<span class="hljs-string">'path'</span>).style.stroke = <span class="hljs-string">'red'</span>; })</code></pre> </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
